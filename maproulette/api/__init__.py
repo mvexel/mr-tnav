@@ -508,6 +508,7 @@ class AdminApiChallenge(Resource):
 
         if challenge_exists(slug):
             # update existing challenge
+            app.logger.debug('updating challenge')
             challenge = get_challenge_or_404(slug, abort_if_inactive=False)
             if not challenge.update(data):
                 abort(400)

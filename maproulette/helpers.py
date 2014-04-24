@@ -46,9 +46,8 @@ def get_challenge_or_404(challenge_slug, instance_type=None,
         return c
 
 
-def challenge_exists(challenge_slug):
-    q = Challenge.query.filter(
-        Challenge.slug == challenge_slug).first()
+def challenge_exists(slug):
+    q = Challenge.query.filter_by(slug=slug).first()
     if q is None:
         return False
     return True
