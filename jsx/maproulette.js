@@ -643,6 +643,11 @@ var MRManager = (function () {
             }
             task = {};
             getTask();
+            // log to piwik
+            _paq.push(["setCustomVariable", 1, 
+                "NextTask", 
+                action]); 
+            _paq.push(["trackPageView"]);
         };
 
         var openTaskInJosm = function () {
