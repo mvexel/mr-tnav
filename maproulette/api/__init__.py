@@ -498,29 +498,36 @@ api.add_resource(ApiChallengePolygon,
 
 class AdminApiChallenge(Resource):
 
-    """Admin challenge creation endpoint"""
+    """Admin challenge creation / update endpoint"""
 
     def put(self, slug):
-        if challenge_exists(slug):
-            return {}
+
         try:
-            payload = json.loads(request.data)
+            data = json.loads(request.data)
         except Exception:
             abort(400)
-        if not 'title' in payload:
-            abort(400)
-        c = Challenge(
-            slug,
-            payload.get('title'),
-            payload.get('geometry'),
-            payload.get('description'),
-            payload.get('blurb'),
-            payload.get('help'),
-            payload.get('instruction'),
-            payload.get('active'),
-            payload.get('difficulty'))
-        db.session.add(c)
-        db.session.commit()
+
+        if challenge_exists(slug):
+            # update existing challenge
+            challenge = get_challenge_or_404(slug, abort_if_inactive=False)
+            if not challenge.update(data):
+                abort(400)
+        else:
+            # create new challenge
+            if not 'title' in data:
+                abort(400)
+            c = Challenge(
+                slug,
+                data.get('title'),
+                data.get('geometry'),
+                data.get('description'),
+                data.get('blurb'),
+                data.get('help'),
+                data.get('instruction'),
+                data.get('active'),
+                data.get('difficulty'))
+            db.session.add(c)
+            db.session.commit()
 
     def delete(self, slug):
         """delete a challenge"""

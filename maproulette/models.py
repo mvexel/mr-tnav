@@ -205,6 +205,19 @@ class Challenge(db.Model):
         area = db.session.query(self.geom.ST_Area()).one()[0]
         return (area <= app.config['MAX_SQ_DEGREES_FOR_LOCAL'])
 
+    def update(self, new_values):
+        """This updates a challenge based on a dict with new values"""
+        for k, v in new_values.iteritems():
+            app.logger.debug('updating %s to %s' % (k, v))
+            # if a status is set, append an action
+            if not hasattr(self, k):
+                app.logger.debug('challenge does not have %s' % (k,))
+                return False
+            setattr(self, k, v)
+        db.session.merge(self)
+        db.session.commit()
+        return True
+
 
 class Task(db.Model):
 
