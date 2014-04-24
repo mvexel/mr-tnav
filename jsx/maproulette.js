@@ -458,6 +458,15 @@ var MRManager = (function () {
                 }
             });
 
+            // register event listener for tracking button clicks
+            $('.button').click(function() {
+                console.log('button click')
+                _paq.push(["setCustomVariable", 1, 
+                         "ButtonClick", 
+                         $(this).text()]); 
+                _paq.push(["trackPageView"]);
+            });
+
             if (this.loggedIn) {
                 // check if the user passed things
                 if (parseHash()) {

@@ -25,18 +25,15 @@
     <!-- Piwik -->
     <script type="text/javascript">
         var _paq = _paq || [];
+        (function(){ var u=(("https:" == document.location.protocol) ? "https://http://54.208.235.171/piwik/" : "http://54.208.235.171/piwik/");
+        _paq.push(['setSiteId', 1]);
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
-        (function() {
-            var u=(("https:" == document.location.protocol) ? "https" : "http") + "://maproulette.org/piwik/";
-            _paq.push(['setTrackerUrl', u+'piwik.php']);
-            _paq.push(['setSiteId', 1]);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
-            g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-        })();
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.defer=true; g.async=true; g.src=u+'piwik.js';
+        s.parentNode.insertBefore(g,s); })();
     </script>
-<noscript><p><img src="http://maproulette.org/piwik/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
+    <!-- End Piwik Code -->
     {% endblock %}
 </head>
   {% block body %}
