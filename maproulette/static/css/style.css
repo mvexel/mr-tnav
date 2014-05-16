@@ -122,7 +122,9 @@ div#fixed.button {
 div.button.cancel {
     background-color: #ffffff;
     font-weight: normal;
-	color:#0180ff;
+	color: #0180ff;
+	font-weight: bold;
+    font-size: 13px;
 }
 
 /* tiny style buttons */
