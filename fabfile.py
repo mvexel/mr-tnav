@@ -279,7 +279,7 @@ def update_application(instance):
     service('postgresql', 'stop')
     git_pull(instance)
     service('postgresql', 'start')
-    flask_manage(instance, command='db upgrade')
+    #flask_manage(instance, command='db upgrade')
     compile_jsx(instance)
     service('uwsgi', 'start')
 
