@@ -4,7 +4,8 @@
     {% block head %}
     <script type="text/javascript" src="http://fixthemap.scout.me/static/js/jquery-2.1.0.min.js"></script>
     
-    <script type="http://fixthemap.scout.me/static/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="{{ url_for("static",
+      filename="js/jquery.cookie.js") }}"></script>
     
     <script type="text/javascript" src="http://fixthemap.scout.me/static/js/jquery.noty.packaged.min.js"></script>
     
