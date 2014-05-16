@@ -43,7 +43,7 @@ div.notifications {
     z-index:15;
     position:absolute;
     left:50px;
-    top:10px;
+    top:50px;
     width:30%;
 }
 
@@ -122,6 +122,7 @@ div#fixed.button {
 div.button.cancel {
     background-color: #ffffff;
     font-weight: normal;
+	color:#0180ff;
 }
 
 /* tiny style buttons */
