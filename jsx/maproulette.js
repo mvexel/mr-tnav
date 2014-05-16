@@ -290,7 +290,9 @@ var MRConfig = (function () {
         // the default map options
         mapOptions: {
             center: new L.LatLng(40, -90),
-            zoom: 4
+            zoom: 4,
+            keyboard: false,
+            zoomControl: false
         },
 
         // default tile URL
