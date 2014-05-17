@@ -374,7 +374,7 @@ class ApiChallengeTask(ProtectedResource):
                 "https://api.mailgun.net/v2/maproulette.org/messages",
                 auth=("api", app.config["MAILGUN_API_KEY"]),
                 data={"from": "MapRoulette <admin@maproulette.org>",
-                      "to": ["maproulette@maproulette.org"],
+                      "to": ["martijnv@telenav.com"],
                       "subject":
                       "Challenge {} is complete".format(challenge.slug),
                       "text":
