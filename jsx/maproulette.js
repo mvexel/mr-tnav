@@ -715,8 +715,8 @@ var MRManager = (function () {
   var presentWelcomeDialog = function() {
     React.renderComponent(
         <div>
-        <h1>Welcome to MapRoulette</h1>
-        <div>Sign in with OpenStreetMap to play MapRoulette</div>
+        <h1>Welcome to #fixthemap</h1>
+        <div>Want to improve the map? Sign in with OpenStreetMap to solve current challenges.</div>
         <Button onClick={signIn}>Sign in</Button>
         </div>, document.getElementById('dialog'));
     $('#dialog').fadeIn();
@@ -729,7 +729,7 @@ var MRManager = (function () {
         };
         React.renderComponent(
             <div>
-            <h1>Welcome to MapRoulette!</h1>
+            <h1>Welcome to #fixthemap</h1>
             <p>You will be working on this challenge:</p>
             <h2>{challenge.title}</h2>
             <p>{challenge.description}</p>
