@@ -171,7 +171,8 @@ div#challenge_blurb {
 /* the little stats section */
 div#stats {
     font-size: 11px;
-    color: #646464;
+    color: #949494;
+    text-align: center
 }
 
 /* the dialog presented after clicking 'edit' */
