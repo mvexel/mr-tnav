@@ -217,6 +217,13 @@ td.challengetitle {
 
 }
 
+/* add override for attribution alignment */
+.leaflet-control-attribution {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
 td.hidden {
     display: none;
 }
