@@ -296,7 +296,8 @@ var MRConfig = (function () {
         },
 
         // default tile URL
-        tileUrl: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        tileUrl: 'http://otile{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg',
+        //tileUrl: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 
         // default tile attribution
         tileAttrib: '&copy; <a href=\'http://openstreetmap.org\'> OpenStreetMap</a> contributors',
@@ -419,7 +420,8 @@ var MRManager = (function () {
 
             // and the tile layer
             var tileLayer = new L.TileLayer(MRConfig.tileUrl, {
-                attribution: MRConfig.tileAttrib
+                attribution: MRConfig.tileAttrib, 
+                subdomains: '1234'
             });
 
             // and the GeoJSON layer
